@@ -88,13 +88,8 @@ The full account list is in the setup guide.
 
 ## Documentation
 
-[`docs/requirements.md`](docs/requirements.md) - [`docs/architecture.md`](docs/architecture.md) (components, flows, DFDs, state machine) -
+[`docs/architecture.md`](docs/architecture.md) (components, flows, DFDs, state machine) -
 [`docs/database-design.md`](docs/database-design.md) (ER diagram) - [`docs/api.md`](docs/api.md) -
-[`docs/syllabus-checklist.md`](docs/syllabus-checklist.md) - [`docs/presentation-notes.md`](docs/presentation-notes.md) -
 [`docs/design-decisions.md`](docs/design-decisions.md) (assumptions and deviations) - [`docs/screenshots/`](docs/screenshots/README.md)
 
-## Status and honest limitations
 
-Implemented and tested: everything listed under Features. Not implemented / not claimed: deployment, e-mail or push notifications,
-real-time updates, real SLA durations (sample values only), real screenshots (to be captured by you). No usage statistics or
-deployment claims are made anywhere in this project.
