@@ -1,0 +1,8 @@
+{% extends "django_demo/base.html" %}
+{% block title %}Feedback saved{% endblock %}
+{% block content %}
+<h1>Recorded in your session</h1>
+{% for s in submissions %}<div class="card"><strong>{{ s.name }}</strong> - {{ s.building }} - urgency {{ s.urgency }}<br>{{ s.message|linebreaksbr }}</div>
+{% empty %}<p>Nothing recorded yet.</p>{% endfor %}
+<p><a href="{% url 'django_demo:feedback' %}">Submit another</a></p>
+{% endblock %}

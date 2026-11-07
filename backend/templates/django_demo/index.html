@@ -1,0 +1,27 @@
+{% extends "django_demo/base.html" %}
+{% block title %}Demo home - CampusFix{% endblock %}
+{% block content %}
+<h1>Django syllabus demo (INT 253)</h1>
+<div class="card">
+  <h2>Unit III - templates (DTL)</h2>
+  <p>Variable: there are <strong>{{ ticket_count }}</strong> tickets in the database.</p>
+  <p>Cookie value: {% if building %}your preferred building is <span class="tag">{{ building }}</span>{% else %}no preferred building cookie set yet{% endif %}.</p>
+  <h3>Loop with condition</h3>
+  <ul>
+  {% for issue in issues %}
+    <li class="{% cycle 'odd' 'even' %}">{{ forloop.counter }}. {{ issue.title|title }} -
+      <a href="{% url 'django_demo:building' issue.building %}">{{ issue.building }}</a>
+      <span class="tag">{{ issue.status }}</span>{% if issue.urgent %} <strong>(urgent)</strong>{% endif %}</li>
+  {% endfor %}
+  </ul>
+  <h3>{% verbatim %}{% empty %}{% endverbatim %}</h3>
+  <ul>{% for x in no_issues %}<li>{{ x }}</li>{% empty %}<li>No issues in this list (empty-clause demo).</li>{% endfor %}</ul>
+</div>
+<div class="card">
+  <h2>Unit II - URL mapping</h2>
+  <ul>
+    <li><code>path()</code> with converter: <a href="{% url 'django_demo:building' 'Library' %}">/demo/building/Library/</a></li>
+    <li><code>re_path()</code> with regex groups: <a href="{% url 'django_demo:reference' year='2026' number='000001' %}">/demo/ref/2026/000001/</a></li>
+  </ul>
+</div>
+{% endblock %}

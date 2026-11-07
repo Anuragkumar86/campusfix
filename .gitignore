@@ -1,0 +1,154 @@
+# =========================================================
+# ENVIRONMENT VARIABLES & SECRETS
+# =========================================================
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Explicit environment files
+backend/.env
+frontend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
+# Certificates and private keys
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+
+# =========================================================
+# PYTHON / DJANGO BACKEND
+# =========================================================
+
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Python packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+wheels/
+
+# Testing and coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+
+# Type checking and linting caches
+.mypy_cache/
+.pyright/
+.ruff_cache/
+.dmypy.json
+.pyre/
+
+# Django generated files
+backend/media/*
+!backend/media/.gitkeep
+backend/staticfiles/
+staticfiles/
+
+# Local databases
+*.sqlite3
+*.sqlite3-journal
+db.sqlite3
+
+# Python logs
+*.log
+
+# =========================================================
+# NODE.JS / NEXT.JS FRONTEND
+# =========================================================
+
+# Dependencies
+node_modules/
+
+# Next.js build output
+.next/
+out/
+
+# Production build
+dist/
+build/
+
+# TypeScript generated files
+*.tsbuildinfo
+next-env.d.ts
+
+# Test and coverage output
+coverage/
+.nyc_output/
+playwright-report/
+test-results/
+.vitest/
+
+# Package manager logs
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Environment-specific Next.js files
+.vercel/
+
+# =========================================================
+# GENERAL BUILD / GENERATED FILES
+# =========================================================
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*.bak
+*.orig
+
+# Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# =========================================================
+# IDE / EDITOR
+# =========================================================
+
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# =========================================================
+# DOCKER / LOCAL DEVELOPMENT
+# =========================================================
+
+# Local Docker overrides
+docker-compose.override.yml
+
+# =========================================================
+# PROJECT-SPECIFIC EXCLUSIONS
+# =========================================================
+
+# Local setup/testing documentation (as in existing configuration)
+SETUP_AND_TESTING_GUIDE.md

@@ -1,0 +1,15 @@
+{% extends "django_demo/base.html" %}
+{% block title %}Demo form{% endblock %}
+{% block content %}
+<h1>Demo feedback form</h1>
+<p>GET shows the form; POST is validated on the server, protected by CSRF, and a success redirects (Post/Redirect/Get).</p>
+<form method="post" novalidate class="card">
+  {% csrf_token %}
+  {{ form.non_field_errors }}
+  {% for field in form %}
+    <p><label for="{{ field.id_for_label }}">{{ field.label }}</label><br>{{ field }}
+    {% if field.help_text %}<br><small>{{ field.help_text }}</small>{% endif %}{{ field.errors }}</p>
+  {% endfor %}
+  <button type="submit">Send</button>
+</form>
+{% endblock %}

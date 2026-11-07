@@ -1,0 +1,21 @@
+
+services:
+  db:
+    image: postgres:16
+    container_name: campusfix-db
+    environment:
+      POSTGRES_USER: campusfix
+      POSTGRES_PASSWORD: campusfix   # development-only password; matches backend/.env.example
+      POSTGRES_DB: campusfix
+    ports:
+      - "5432:5432"
+    volumes:
+      - campusfix_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U campusfix -d campusfix"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  campusfix_pgdata:

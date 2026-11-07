@@ -1,0 +1,6 @@
+{% extends "django_demo/base.html" %}
+{% block title %}Session demo{% endblock %}
+{% block content %}
+<h1>Session demo</h1>
+<p class="card">You have opened this page <strong>{{ visits }}</strong> time{{ visits|pluralize }} in this browser session. The counter lives on the server; the browser only holds the session-id cookie.</p>
+{% endblock %}

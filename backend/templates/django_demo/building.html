@@ -1,0 +1,8 @@
+{% extends "django_demo/base.html" %}
+{% block title %}{{ name }} - demo{% endblock %}
+{% block content %}
+<h1>Building: {{ name }}</h1>
+<p>URL parameter captured by <code>&lt;str:name&gt;</code>.</p>
+{% for issue in issues %}<div class="card">{{ issue.title }} <span class="tag">{{ issue.status }}</span></div>
+{% empty %}<p>No sample issues for this building.</p>{% endfor %}
+{% endblock %}

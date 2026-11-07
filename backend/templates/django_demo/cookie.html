@@ -1,0 +1,8 @@
+{% extends "django_demo/base.html" %}
+{% block title %}Cookie demo{% endblock %}
+{% block content %}
+<h1>Cookie demo</h1>
+<p class="card">Current cookie <code>preferred_building</code>: {% if building %}<strong>{{ building }}</strong>{% else %}not set{% endif %}</p>
+<form method="post" class="card">{% csrf_token %}{{ form.as_p }}<button type="submit">Remember building</button></form>
+<form method="post" action="{% url 'django_demo:cookie_clear' %}">{% csrf_token %}<button type="submit">Clear cookie</button></form>
+{% endblock %}

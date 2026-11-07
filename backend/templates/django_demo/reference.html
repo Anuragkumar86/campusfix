@@ -1,0 +1,7 @@
+{% extends "django_demo/base.html" %}
+{% block title %}Ticket reference{% endblock %}
+{% block content %}
+<h1>Ticket reference {{ reference }}</h1>
+<p>Parsed by <code>re_path</code>: year = <strong>{{ year }}</strong>, number = <strong>{{ number }}</strong>.</p>
+{% if found %}<p class="msg">A ticket with this reference exists in the database.</p>{% else %}<p>No ticket with this reference exists yet.</p>{% endif %}
+{% endblock %}
